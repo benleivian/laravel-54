@@ -1,4 +1,18 @@
 const { mix } = require('laravel-mix');
+const browserSyncPlugin = require('browser-sync-webpack-plugin');
+
+mix.webpackConfig({
+  plugins: [
+    new browserSyncPlugin({
+      files: [
+        '**/app.css'
+      ],
+      proxy: 'laravel-54.dev'
+    }, {
+      reload: false
+    })
+  ]
+})
 
 /*
  |--------------------------------------------------------------------------

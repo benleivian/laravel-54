@@ -63,6 +63,9 @@
                 margin-bottom: 30px;
             }
         </style>
+
+        <link rel="stylesheet" href="/css/app.css">
+
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -91,5 +94,10 @@
                 </div>
             </div>
         </div>
+        @if (getenv('APP_ENV') === 'local')
+          <script id="__bs_script__">//<![CDATA[
+            document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.6'><\/script>".replace("HOST", location.hostname));
+            //]]></script>
+        @endif
     </body>
 </html>
