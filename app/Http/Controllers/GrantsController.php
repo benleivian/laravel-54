@@ -25,7 +25,9 @@ class GrantsController extends Controller
      */
     public function index()
     {
-        return view('grants.index');
+        $grants = \App\Grant::all();
+
+        return view('grants.index')->with('grants', $grants);
     }
 
     /**
