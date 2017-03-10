@@ -29,6 +29,11 @@
               @endforeach
             </tbody>
           </table>
+          <div class="panel-footer">
+            <div class="btn-group" role="group" aria-label="...">
+              <a href="{{ route('grants.create') }}" role="button" class="btn btn-default">Add New Grant</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
