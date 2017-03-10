@@ -59,7 +59,7 @@ class GrantsController extends Controller
      */
     public function show(Grant $grant)
     {
-        //
+        return view('grants.show')->with('grant', $grant);
     }
 
     /**
