@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('grants', 'GrantsController', [ 'only' => [ 'index', 'show' ]]);
+Route::resource('grants', 'GrantsController', [ 'only' => [ 'index', 'show', 'create', 'store' ]]);
