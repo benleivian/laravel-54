@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/grants', 'GrantsController@index');
+Route::resource('grants', 'GrantsController', [ 'only' => [ 'index', 'show' ]]);
