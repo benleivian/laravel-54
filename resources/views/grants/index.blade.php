@@ -16,7 +16,7 @@
               <tr>
                 <th>Description</th>
                 <th>Amount</th>
-                <th>Age</th>
+                <th>Created</th>
               </tr>
             </thead>
             <tbody>
@@ -24,7 +24,7 @@
                 <tr>
                   <td><a href="grants/{{ $grant->id }}">{{ $grant->description }}</a></td>
                   <td>{{ $grant->amount }}</td>
-                  <td>{{ $grant->created_at or '&nbsp;' }}</td>
+                  <td>{{ $grant->created_at->diffForHumans() }}</td>
                 </tr>
               @endforeach
             </tbody>

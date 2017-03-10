@@ -28,8 +28,9 @@
               </li>
               <li class="list-group-item">
                 <div>
-                  <strong>Age:</strong> <br>
-                  {{ $grant->created_at or '&nbsp;' }}
+                  <strong>Created:</strong> <br>
+                  {{ $grant->created_at->toDayDateTimeString() }}
+                  ( {{ $grant->created_at->diffForHumans() }} )
                 </div>
               </li>
             </ul>
