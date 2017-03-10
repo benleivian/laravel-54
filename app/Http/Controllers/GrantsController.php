@@ -48,13 +48,17 @@ class GrantsController extends Controller
      */
     public function store(Request $request)
     {
-        $grant = new Grant;
 
-        $grant->description = request('description');
-        $grant->amount = request('amount');
-        $grant->status = 0;
+        $this->validate(request(), [
+          'description' => 'required',
+          'amount' => 'required|numeric',
+        ]);
 
-        $grant->save();
+        Grant::create([
+            'description' => request('description'),
+            'amount'      => request('amount'),
+            'status'      => 0,
+        ]);
 
         return redirect()->route('grants.index');
     }
