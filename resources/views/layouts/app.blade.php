@@ -13,6 +13,17 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <style media="screen">
+      .table > thead > tr > th:first-child,
+      .table > tbody > tr > td:first-child {
+        padding-left: 16px;
+      }
+      .table > thead > tr > th:last-child,
+      .table > tbody > tr > td:last-child {
+        padding-right: 16px;
+      }
+    </style>
+
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
