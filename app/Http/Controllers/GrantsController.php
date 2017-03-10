@@ -25,7 +25,7 @@ class GrantsController extends Controller
      */
     public function index()
     {
-        $grants = \App\Grant::all();
+        $grants = Grant::all();
 
         return view('grants.index')->with('grants', $grants);
     }
@@ -37,7 +37,7 @@ class GrantsController extends Controller
      */
     public function create()
     {
-        //
+        return view('grants.create');
     }
 
     /**
@@ -48,7 +48,15 @@ class GrantsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $grant = new Grant;
+
+        $grant->description = request('description');
+        $grant->amount = request('amount');
+        $grant->status = 0;
+
+        $grant->save();
+
+        return redirect()->route('grants.index');
     }
 
     /**
