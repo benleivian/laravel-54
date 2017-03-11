@@ -61,10 +61,9 @@ class GrantsController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate(request(), [
           'description' => 'required',
-          'amount' => 'required|numeric',
+          'amount' => 'required|numeric|max:' . $this->remainingAmount(),
         ]);
 
         Grant::create([
