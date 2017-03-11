@@ -28,7 +28,7 @@ class GrantsController extends Controller
     {
         $grants = Grant::all();
 
-        $amount_total = DB::table('grants')->sum('amount');
+        $amount_total = $grants->sum('amount');
 
         return view('grants.index')->with([
             'grants' => $grants,
