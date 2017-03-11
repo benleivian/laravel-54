@@ -23,7 +23,7 @@
               <li class="list-group-item">
                 <div>
                   <strong>Amount:</strong> <br>
-                  {{ $grant->amount }}
+                  @currency( $grant->amount )
                 </div>
               </li>
               <li class="list-group-item">
