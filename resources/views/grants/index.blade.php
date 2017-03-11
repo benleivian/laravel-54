@@ -12,7 +12,7 @@
             <div style="display:flex; align-items:baseline;">
               <h2>Grants</h2>
               <h4 style="margin-left:1rem;color:{{ $remaining_amount < 1 ? '#a94442;' : '#0A8' }}">
-                ( @currency( $remaining_amount ) remaining )
+                ( @currency( $remaining_amount ) available )
               </h4>
             </div>
           </div>
