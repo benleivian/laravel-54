@@ -20,11 +20,14 @@
               <br>
               <div class="form-group">
                 <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" >
+                <input type="text" class="form-control" id="description" name="description" placeholder="What should we call this?" >
               </div>
               <div class="form-group">
                 <label for="amount">Amount</label>
-                <input type="text" class="form-control" id="amount" name="amount" >
+                <div class="input-group">
+                  <div class="input-group-addon">$</div>
+                  <input type="text" class="form-control" id="amount" name="amount" placeholder="Enter a dollar amount." >
+                </div>
               </div>
             </div>
             <div class="panel-footer">
