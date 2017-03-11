@@ -11,10 +11,4 @@ class Grant extends Model
       'amount',
       'status',
     ];
-
-
-    public function getAmountAttribute($amount)
-    {
-        return $this->attributes['amount'] = sprintf('$%s', number_format($amount, 2));
-    }
 }

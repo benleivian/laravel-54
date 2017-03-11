@@ -23,7 +23,7 @@
               @foreach ($grants as $grant)
                 <tr>
                   <td><a href="grants/{{ $grant->id }}">{{ $grant->description }}</a></td>
-                  <td>{{ $grant->amount }}</td>
+                  <td>@currency( $grant->amount )</td>
                   <td>{{ $grant->created_at->diffForHumans() }}</td>
                 </tr>
               @endforeach
