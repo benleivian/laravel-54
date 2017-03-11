@@ -28,11 +28,11 @@ class GrantsController extends Controller
     {
         $grants = Grant::all();
 
-        $amount_total = $grants->sum('amount');
+        $grants_total = $grants->sum('amount');
 
         return view('grants.index')->with([
             'grants' => $grants,
-            'amount_total' => $amount_total,
+            'grants_total' => $grants_total,
         ]);
     }
 

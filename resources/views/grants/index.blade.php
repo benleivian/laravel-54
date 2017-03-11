@@ -31,7 +31,7 @@
             <tfoot>
               <tr>
                 <th>&nbsp;</th>
-                <th>@currency( $amount_total )</th>
+                <th>@currency( $grants_total )</th>
                 <th>&nbsp;</th>
               </tr>
             </tfoot>
