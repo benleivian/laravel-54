@@ -28,11 +28,9 @@ class GrantsController extends Controller
     public function index()
     {
         $grants = Grant::all();
-        $offerings = Offering::all();
 
         $grants_total = $grants->sum('amount');
-        $offerings_total = $offerings->sum('amount');
-        $remaining_amount = $offerings_total - $grants_total;
+        $remaining_amount = $this->remainingAmount();
 
         return view('grants.index')->with([
             'grants' => $grants,
@@ -48,7 +46,11 @@ class GrantsController extends Controller
      */
     public function create()
     {
-        return view('grants.create');
+        $remaining_amount = number_format(( $this->remainingAmount() ), 2);
+
+        return view('grants.create')->with([
+            'remaining_amount' => $remaining_amount
+        ]);
     }
 
     /**
@@ -82,7 +84,9 @@ class GrantsController extends Controller
      */
     public function show(Grant $grant)
     {
-        return view('grants.show')->with('grant', $grant);
+        return view('grants.show')->with([
+            'grant' => $grant
+        ]);
     }
 
     /**
@@ -117,5 +121,14 @@ class GrantsController extends Controller
     public function destroy(Grant $grant)
     {
         //
+    }
+
+    public function remainingAmount()
+    {
+        $grants_total = DB::table('grants')->sum('amount');
+        $offerings_total = DB::table('offerings')->sum('amount');
+        $remaining_amount = $offerings_total - $grants_total;
+
+        return $remaining_amount;
     }
 }
