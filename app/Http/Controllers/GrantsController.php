@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Grant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GrantsController extends Controller
 {
@@ -27,7 +28,12 @@ class GrantsController extends Controller
     {
         $grants = Grant::all();
 
-        return view('grants.index')->with('grants', $grants);
+        $amount_total = DB::table('grants')->sum('amount');
+
+        return view('grants.index')->with([
+            'grants' => $grants,
+            'amount_total' => $amount_total,
+        ]);
     }
 
     /**

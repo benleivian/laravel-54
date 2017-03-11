@@ -28,6 +28,13 @@
                 </tr>
               @endforeach
             </tbody>
+            <tfoot>
+              <tr>
+                <th>&nbsp;</th>
+                <th>@currency( $amount_total )</th>
+                <th>&nbsp;</th>
+              </tr>
+            </tfoot>
           </table>
           <div class="panel-footer">
             <div class="btn-group" role="group" aria-label="...">
