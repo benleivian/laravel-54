@@ -26,7 +26,7 @@
                 <label for="amount">Amount</label>
                 <div class="input-group">
                   <div class="input-group-addon">$</div>
-                  <input type="text" class="form-control" id="amount" name="amount" placeholder="Enter a dollar amount." >
+                  <input type="text" class="form-control" id="amount" name="amount" placeholder="{{ $remaining_amount }} available." >
                 </div>
               </div>
             </div>
