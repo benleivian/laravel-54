@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Grant;
+use App\Offering;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,12 +28,16 @@ class GrantsController extends Controller
     public function index()
     {
         $grants = Grant::all();
+        $offerings = Offering::all();
 
         $grants_total = $grants->sum('amount');
+        $offerings_total = $offerings->sum('amount');
+        $remaining_amount = $offerings_total - $grants_total;
 
         return view('grants.index')->with([
             'grants' => $grants,
             'grants_total' => $grants_total,
+            'remaining_amount' => $remaining_amount,
         ]);
     }
 
